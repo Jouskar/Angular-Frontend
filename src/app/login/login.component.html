@@ -1,0 +1,25 @@
+<div class="container col-5">
+  <div class="m-3">  
+    <form #formLogin="ngForm" (ngSubmit)="login(formLogin)">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-body">
+            <div class="col form-group">
+              
+              <label>Kullanıcı Adı</label>
+              <input required [class.submitted]="formSubmitted" type="text" [(ngModel)]="userName" name="user" class="form-control">
+              
+              <label>Şifre</label>
+              <input required [class.submitted]="formSubmitted" type="password" [(ngModel)]="password" name="pass" class="form-control">
+
+              <div class="form-group-append mt-3">
+                <button type="submit" [disabled]="formSubmitted && serviceNotDone && formLogin.valid" [class.btn-secondary]="formSubmitted && serviceNotDone && formLogin.valid" class="btn btn-primary">Giriş</button>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </form>    
+  </div>
+</div>
